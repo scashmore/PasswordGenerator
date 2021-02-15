@@ -32,8 +32,8 @@ section {
     border-width: 10px;
     border-style: double;
     padding: 2%;
+    justify-content: center;
 }
-
 .password {
     margin: 2% 5% 2% 5%;
 }
