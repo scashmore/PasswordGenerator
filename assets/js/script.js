@@ -101,7 +101,7 @@ function writePassword() {
 }
 
 //event listeners
-generateEl.addEventListener('click', writePassword());
+generateEl.addEventListener('click', writePassword);
 //copyEl.addEventListener('click',);
 
 //RANDOM CHARACTER FUNCTIONS
