@@ -85,7 +85,7 @@ function passwordSelections() {
 
 function generatePassword() {
     passwordSelections();
-    for (i = 0; i <= parseInt(lengthEl.value); i++) {
+    for (i = 0; i < parseInt(lengthEl.value); i++) {
         newPassword.push(randCharSelection[Math.floor(Math.random() * randCharSelection.length - 1)]);
     }
     console.log(newPassword);
