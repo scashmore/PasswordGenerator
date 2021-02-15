@@ -25,14 +25,13 @@ h1 {
 
 section {
     background-color: #b399a2;
+    max-height: 45vh;
     font-size: 15px;
     margin: 2% 25% 2% 25%;
     border: bisque;
     border-width: 10px;
     border-style: double;
     padding: 2%;
-    display: flex;
-    flex-direction: column;
 }
 
 .password {
@@ -42,13 +41,11 @@ section {
 .copy {
     background-color: #bbe5ed;
     border-radius: 5px;
+    font-size: 15px;
 }
 
 .selections {
-    padding-top: 2%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 100%;
+    padding-top: 2%;  
     align-items: center;
 }
 
@@ -61,7 +58,6 @@ input {
 }
 
 .legnth {
-
 }
 
 .slide {
@@ -88,6 +84,7 @@ input {
     margin: 10% 5% 2% 5%;
     background-color: #bbe5ed;
     border-radius: 5px;
+    font-size: 20px;
 }
 
 footer {
@@ -100,5 +97,4 @@ footer {
     border-top: bisque;
     border-top-width: 10px;
     border-top-style: double;
-    
 }
