@@ -1,0 +1,73 @@
+body {
+    background-color: #bfbccb;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+header {
+    background-color: #bbe5ed;
+    display: flex;
+    
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+section {
+    background-color: #b399a2;
+    font-size: 15px;
+}
+
+.password {
+    
+}
+
+.copy {
+
+}
+
+.selections {
+
+}
+
+label {
+
+}
+
+input {
+
+}
+
+.legnth {
+
+}
+
+.slide {
+
+}
+
+.upperCase {
+
+}
+
+.lowewCase {
+
+}
+
+.numbers {
+
+}
+
+.symbols {
+
+}
+
+.generate {
+
+}
+
+footer {
+    background-color: #bbe5ed;
+}
