@@ -22,6 +22,8 @@ var lower = lowercase.split("");
 var upper = uppercase.split("");
 var nums = numbers.split("");
 var syms = symbols.split("");
+var checkCount = 0;
+var countValid = [];
 //console.log(lower);
 //console.log(upper);
 //console.log(nums);
@@ -51,7 +53,7 @@ function passwordSelections() {
     var inclLower = lowerEl.checked;
     var inclNums = numsEl.checked;
     var inclSyms = symsEl.checked;
-    var randCharSelection = [];
+    var randCharSelection = []
     if (charLength < 8 || charLength > 128) {
         alert("Your password does not meet length criteria!");
         return;
@@ -61,50 +63,55 @@ function passwordSelections() {
         alert("You must select at least one character option!");
         return;
     }
-    console.log(inclUpper)
     if (inclUpper === true) {
-        console.log('adding random')
         randCharSelection.push(upper);
+        countValid.push(upper[Math.floor(Math.random() * upper.length)]);
+        checkCount++
     }
     if (inclLower === true) {
         randCharSelection.push(lower);
+        countValid.push(lower[Math.floor(Math.random() * lower.length)]);
+        checkCount++
     }
 
     if (inclNums === true) {
         randCharSelection.push(nums);
+        countValid.push(nums[Math.floor(Math.random() * nums.length)]);
+        checkCount++
     }
 
     if (inclSyms === true) {
         randCharSelection.push(syms);
+        countValid.push(syms[Math.floor(Math.random() * syms.length - 1)]);
+        checkCount++
     }
     return randCharSelection;
     console.log(randCharSelection);
 
 }
 
-// function empty() {
-//     randCharSelection.length = 0;
-// }
-
 function generatePassword() {
     var passwordSelectionsArr = passwordSelections();
     console.log(passwordSelectionsArr);
-    var newPassword = [];
-    for (i = 0; i < parseInt(lengthEl.value); i++) {
-        var num = Math.floor(Math.random() * passwordSelectionsArr.length);
+    var partPassword = [];
+    for (i = 0; i < parseInt(lengthEl.value) - checkCount; i++) {
+        var num = Math.floor(Math.random() * (passwordSelectionsArr.length));
         var placeHolder = passwordSelectionsArr[num];
         console.log(placeHolder)
         var charcter = placeHolder[Math.floor(Math.random() * placeHolder.length)];
-        newPassword.push(charcter);
+        partPassword.push(charcter);
     }
+    var newPassword = partPassword.concat(countValid);
     console.log(newPassword);
+
     return newPassword.join('');
 }
 
 
 
 function writePassword() {
-    //empty ();
+    checkCount = 0;
+    countValid.length = 0;
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.textContent = password;
@@ -113,23 +120,23 @@ function writePassword() {
 
 //event listeners
 generateEl.addEventListener('click', writePassword);
-//copyEl.addEventListener('click',);
+    //copyEl.addEventListener('click',);
 
-//RANDOM CHARACTER FUNCTIONS
-function randLower() {
-    return lower[Math.floor(Math.random() * lower.length - 1)];
-};
-function randUpper() {
-    return upper[Math.floor(Math.random() * upper.length - 1)];
-};
+    //RANDOM CHARACTER FUNCTIONS
+/*     function randLower() {
+        return lower[Math.floor(Math.random() * lower.length)];
+    };
+    function randUpper() {
+        return upper[Math.floor(Math.random() * upper.length)];
+    };
 
-function randNum() {
-    return nums[Math.floor(Math.random() * nums.length - 1)];
-};
+    function randNum() {
+        return nums[Math.floor(Math.random() * nums.length)];
+    };
 
-function randSym() {
-    return syms[Math.floor(Math.random() * sym.length - 1)];
-};
+    function randSym() {
+        return syms[Math.floor(Math.random() * sym.length - 1)];
+    }; */
 //console.log(randUpper());
 //console.log(randLower());
 //console.log(randNum());
