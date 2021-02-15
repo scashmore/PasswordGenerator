@@ -7,29 +7,49 @@ body {
 header {
     background-color: #bbe5ed;
     display: flex;
-    
+    flex-direction: row;
+    max-height: 25vh;
+    width: 100vw;
+    border-bottom: bisque;
+    border-bottom-width: 10px;
+    border-bottom-style: double;
+    align-items: center;
 }
 
 h1 {
-    font-size: 35px;
+    font-size: 60px;
     font-weight: bold;
+    padding-top: 8.25%;
+    padding-left: 5%;
 }
 
 section {
     background-color: #b399a2;
     font-size: 15px;
+    margin: 2% 25% 2% 25%;
+    border: bisque;
+    border-width: 10px;
+    border-style: double;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
 }
 
 .password {
-    
+    margin: 2% 5% 2% 5%;
 }
 
 .copy {
-
+    background-color: #bbe5ed;
+    border-radius: 5px;
 }
 
 .selections {
-
+    padding-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100%;
+    align-items: center;
 }
 
 label {
@@ -37,7 +57,7 @@ label {
 }
 
 input {
-
+    border-radius: 5px;
 }
 
 .legnth {
@@ -65,9 +85,20 @@ input {
 }
 
 .generate {
-
+    margin: 10% 5% 2% 5%;
+    background-color: #bbe5ed;
+    border-radius: 5px;
 }
 
 footer {
+    white-space: nowrap;
+    position: fixed;
+    bottom: 0;
     background-color: #bbe5ed;
+    min-height: 10vh;
+    min-width: 100vw;
+    border-top: bisque;
+    border-top-width: 10px;
+    border-top-style: double;
+    
 }
