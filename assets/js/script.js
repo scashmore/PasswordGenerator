@@ -2,10 +2,10 @@
 var copyEl = document.getElementById('copy');
 var passEl = document.getElementById('password');
 var lengthEl = document.getElementById('slide');
-var upperEl = document.getElementById('upperCase');
-var lowerEl = document.getElementById('lowerCase');
-var numsEl = document.getElementById('numbers');
-var symsEl = document.getElementById('symbols');
+var upperEl = document.getElementById('checkU');
+var lowerEl = document.getElementById('checkL');
+var numsEl = document.getElementById('checkN');
+var symsEl = document.getElementById('checkS');
 var generateEl = document.getElementById('generate');
 
 //var sliding bar
@@ -29,8 +29,8 @@ var syms = symbols.split("");
 
 //RANDOM GENERATOR FUNCTION ARRAYS
 
-var randCharSelection = [];
-var newPassword = [];
+// var randCharSelection = [];
+// var newPassword = [];
 
 //PASSWORD GENERATOR
 
@@ -51,7 +51,7 @@ function passwordSelections() {
     var inclLower = lowerEl.checked;
     var inclNums = numsEl.checked;
     var inclSyms = symsEl.checked;
-    randCharSelection.length = 0;
+    var randCharSelection = [];
     if (charLength < 8 || charLength > 128) {
         alert("Your password does not meet length criteria!");
         return;
@@ -61,43 +61,54 @@ function passwordSelections() {
         alert("You must select at least one character option!");
         return;
     }
+    console.log(inclUpper)
     if (inclUpper === true) {
-        randCharSelection.push(function () { randUpper() });
-        return;
+        console.log('adding random')
+        randCharSelection.push(upper);
     }
     if (inclLower === true) {
-        randCharSelection.push(function () { randLower() });
-        return;
+        randCharSelection.push(lower);
     }
 
     if (inclNums === true) {
-        randCharSelection.push(function () { randNum() });
-        return;
+        randCharSelection.push(nums);
     }
 
     if (inclSyms === true) {
-        randCharSelection.push(function () { randSym() });
-        return;
+        randCharSelection.push(syms);
     }
+    return randCharSelection;
     console.log(randCharSelection);
 
 }
 
+// function empty() {
+//     randCharSelection.length = 0;
+// }
+
 function generatePassword() {
-    passwordSelections();
+    var passwordSelectionsArr = passwordSelections();
+    console.log(passwordSelectionsArr);
+    var newPassword = [];
     for (i = 0; i < parseInt(lengthEl.value); i++) {
-        newPassword.push(randCharSelection[Math.floor(Math.random() * randCharSelection.length - 1)]);
+        var num = Math.floor(Math.random() * passwordSelectionsArr.length);
+        var placeHolder = passwordSelectionsArr[num];
+        console.log(placeHolder)
+        var charcter = placeHolder[Math.floor(Math.random() * placeHolder.length)];
+        newPassword.push(charcter);
     }
     console.log(newPassword);
+    return newPassword.join('');
 }
 
 
 
 function writePassword() {
+    //empty ();
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
+    passwordText.textContent = password;
     passwordText.value = password;
-    console.log(lengthEl);
 }
 
 //event listeners
