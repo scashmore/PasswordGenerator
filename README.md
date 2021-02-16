@@ -11,4 +11,4 @@ Once selections have been made the user clicks the generate password button. (in
 A password should be generated, and the user can click the clipboard icon to copy the password to their clipboard. 
 
 
-https://imgbin.com/png/2eHBzKqN/lock-3d-computer-graphics-stock-illustration-png#
+https://www.clipartmax.com/download/m2H7m2K9G6G6m2i8_kawaii-desktop-computer-icon-kawaii-computer/

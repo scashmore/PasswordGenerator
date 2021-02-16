@@ -19,7 +19,9 @@ header {
 }
 
 img {
-    object-fit: cover;
+    padding: 2%;
+    margin: 2%;
+    scale: (.5, .5);
 }
 
 h1 {
@@ -27,7 +29,7 @@ h1 {
     font-weight: bold;
     padding-top: 8.25%;
     padding-left: 5%;
-    margin: 2%;
+    margin: 1% 1% 2% 1%;
 }
 
 section {
@@ -121,15 +123,54 @@ input[type=checkbox] {
     transform: scale(1.5, 1.5);
 }
 
-@media (max-width: 690px) {
+@media (max-width: 1350px) {
+    
+    h1 {
+        font-size: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 780px) {
     header {
         flex-direction: column;
     }
-   
+
+    img {
+        width: 200px;
+        height: 191px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        font-size: 40px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2%;
+    }
+
+    .generate:hover {
+        cursor: pointer;
+        transform: scale(1.1, 1.1);
+    }
+}
+
+@media (max-width: 650px) {
+    h1 {
+        font-size: 35px;
+    }
 }
 
 @media (max-width: 500px) {
     img {
         display: none;
+    }
+    h1 {
+        font-size: 25px;
     }
 }
