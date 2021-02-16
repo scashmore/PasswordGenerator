@@ -34,8 +34,6 @@ var countValid = [];
 // var randCharSelection = [];
 // var newPassword = [];
 
-//PASSWORD GENERATOR
-
 //SLIDING BAR
 
 slide.oninput = function () {
@@ -43,9 +41,24 @@ slide.oninput = function () {
 };
 
 //event functions
-//function copyToClip() {
-//
-//}
+
+//COPY TO CLIP
+function copyToClip() {
+    var textarea = document.createElement('textarea');
+    var passwordEl = document.getElementById('password');
+    copyPassword = passwordEl.innerText;
+    if (!copyPassword) {
+        return;
+    }
+    textarea.value = copyPassword
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+    alert('Your password has been copied to the clipboard!');
+}
+
+//PASSWORD GENERATOR
 
 function passwordSelections() {
     var charLength = parseInt(lengthEl.value);
@@ -120,7 +133,8 @@ function writePassword() {
 
 //event listeners
 generateEl.addEventListener('click', writePassword);
-    //copyEl.addEventListener('click',);
+
+copyEl.addEventListener('click', copyToClip);
 
     //RANDOM CHARACTER FUNCTIONS
 /*     function randLower() {
