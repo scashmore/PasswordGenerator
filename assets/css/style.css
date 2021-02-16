@@ -116,13 +116,26 @@ footer {
     border-top-style: double;
 }
 
-@media (max-width: 690px) {
-    header {
-        flex-direction: column;
+
+@media(max-width: 1400px) {
+    footer {
+        min-height: 5vh;
+    }
+    section {
+        min-height: 35vh;
     }
 }
 
 @media (max-width: 690px) {
+    header {
+        flex-direction: column;
+    }
+    footer {
+        min-height: 5vh;
+    }
+}
+
+@media (max-width: 500px) {
     img {
         display: none;
     }
