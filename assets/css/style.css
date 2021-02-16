@@ -8,12 +8,16 @@ header {
     background-color: #bbe5ed;
     display: flex;
     flex-direction: row;
-    max-height: 25vh;
+    min-height: 25vh;
     width: 100vw;
     border-bottom: bisque;
     border-bottom-width: 10px;
     border-bottom-style: double;
-    align-items: center;
+    justify-content: center;
+}
+
+img {
+    object-fit: cover;
 }
 
 h1 {
@@ -21,6 +25,7 @@ h1 {
     font-weight: bold;
     padding-top: 8.25%;
     padding-left: 5%;
+    margin: 2%;
 }
 
 section {
@@ -34,6 +39,7 @@ section {
     padding: 2%;
     justify-content: center;
 }
+
 .password {
     margin: 2% 5% 2% 5%;
     display: flex;
@@ -43,7 +49,7 @@ section {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    display: block;
+    display: flex;
     width: 100%;
     padding-top: 3%;
     padding-bottom: 3%;
@@ -65,47 +71,37 @@ section {
     font-size: 15px;
 }
 
+.copy:hover {
+    cursor: pointer;
+}
+
 .selections {
     padding-top: 2%;  
     align-items: center;
-}
-
-label {
-
 }
 
 input {
     border-radius: 5px;
 }
 
-.legnth {
+.slide:hover {
+    cursor: pointer;
 }
 
-.slide {
-
+.check:hover {
+    cursor: pointer;
 }
 
-.upperCase {
-
-}
-
-.lowewCase {
-
-}
-
-.numbers {
-
-}
-
-.symbols {
-
-}
 
 .generate {
     margin: 10% 5% 2% 5%;
     background-color: #bbe5ed;
     border-radius: 5px;
     font-size: 20px;
+}
+
+.generate:hover {
+    cursor: pointer;
 }
 
 footer {
@@ -118,4 +114,16 @@ footer {
     border-top: bisque;
     border-top-width: 10px;
     border-top-style: double;
+}
+
+@media (max-width: 690px) {
+    header {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 690px) {
+    img {
+        display: none;
+    }
 }
