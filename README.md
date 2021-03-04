@@ -6,7 +6,7 @@ This project is designed to gnereate a password with a minimum of 8 characters a
 ## User Instructions
 The site can be accessed at:  https://scashmore.github.io/Password_Generator/
 
-![Image](assets/images/whole.png)
+![Image](assets/images/whole.PNG)
 
 In order to generate a passwer, the user must select at least one of the four character options and move the slider to the desiered position for length.
 
